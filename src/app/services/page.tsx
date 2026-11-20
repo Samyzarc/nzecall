@@ -288,7 +288,7 @@ export default function ServicesPage() {
               width={260}
               height={260}
               unoptimized
-              className="mt-6 w-[clamp(90px,10vw,130px)]"
+              className="mt-6 w-[clamp(100px,11vw,145px)]"
             />
             <h2
               id="titre-suite"

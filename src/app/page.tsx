@@ -354,7 +354,7 @@ export default function HomePage() {
               width={260}
               height={260}
               unoptimized
-              className="mx-auto mb-9 w-[clamp(90px,10vw,130px)]"
+              className="mx-auto mb-9 w-[clamp(100px,11vw,145px)]"
             />
             <Chip>Parlons de votre accueil</Chip>
             <h2

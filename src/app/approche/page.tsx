@@ -224,7 +224,7 @@ export default function ApprochePage() {
             width={260}
             height={260}
             unoptimized
-            className="w-[clamp(90px,10vw,130px)]"
+            className="w-[clamp(100px,11vw,145px)]"
           />
           <Chip tone="ink" mark="✳">
             Nzé Call · {site.location}
