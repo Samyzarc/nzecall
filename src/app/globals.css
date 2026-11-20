@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  /* Palette Nzé Call — reprise du design du site d'origine */
+  --color-bg: #010b1b;        /* fond général (bleu nuit profond) */
+  --color-shade: #0c1626;     /* fond légèrement plus clair (sections alternées) */
+  --color-surface: #10243b;   /* cartes, panneaux, citations inversées */
+  --color-panel: #2679c4;     /* panneau bleu du formulaire */
+  --color-story: #1f5b98;     /* bandeau bleu « Le sérieux d'un cadre » */
+  --color-ink: #e6e8eb;       /* texte principal */
+  --color-muted: #b6c5d5;     /* texte secondaire */
+  --color-silver: #cdd8e6;    /* texte intermédiaire */
+  --color-accent: #3182ce;    /* accent bleu */
+  --color-accent-hover: #4a97dd;
+  --color-on-accent: #ffffff;
+  --color-hairline: rgb(230 232 235 / 0.22);
+
+  /* Polices (variables posées par next/font dans src/app/fonts.ts) */
+  --font-heading: var(--font-fredoka), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Angles vifs partout — un des marqueurs du design */
+input,
+select,
+textarea,
+button,
+video,
+img {
+  border-radius: 0;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+/* Focus visible net pour la navigation clavier (WCAG 2.1 AA) */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .ticker-track {
+    animation: none;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Bandeau défilant (page Services) : piste dupliquée pour une
+   boucle continue, en pur CSS, désactivée si mouvement réduit.
+   --------------------------------------------------------------- */
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 28s linear infinite;
+}
