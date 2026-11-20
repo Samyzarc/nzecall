@@ -1,0 +1,24 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+.vercel
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
+
+# env files — ne jamais versionner les secrets (voir .env.example)
+.env
+.env.*
+!.env.example
+
+# typescript
+*.tsbuildinfo
