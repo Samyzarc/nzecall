@@ -73,3 +73,27 @@ html {
   width: max-content;
   animation: ticker-scroll 28s linear infinite;
 }
+
+/* ---------------------------------------------------------------
+   Révélation au défilement (composant Reveal) : les enfants
+   s'ouvrent un par un, décalés via la variable --d posée en inline.
+   --------------------------------------------------------------- */
+[data-reveal="off"] > * {
+  opacity: 0;
+  transform: translateY(26px) scaleY(0.965);
+  transform-origin: top center;
+}
+
+[data-reveal] > * {
+  transition:
+    opacity 0.55s ease,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--d, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal="off"] > * {
+    opacity: 1;
+    transform: none;
+  }
+}

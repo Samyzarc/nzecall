@@ -19,13 +19,13 @@ export default function ContactPage() {
     <>
       {/* ------------------------------------------------ Ouverture */}
       <section className="relative overflow-hidden border-b border-hairline bg-[radial-gradient(ellipse_at_50%_60%,#10243b_0%,#010b1b_66%)]">
-        {/* Pastilles flottantes — décoratives, masquées sur petit écran */}
+        {/* Pastilles flottantes — décoratives, floues et discrètes, masquées sur petit écran */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden lg:block">
-          <span className="absolute left-[10%] top-[22%] border border-ink/30 bg-surface/85 px-4 py-2.5 font-mono text-xs uppercase tracking-[0.09em] text-ink">
-            <span className="mr-2 inline-block h-[7px] w-[7px] bg-accent align-middle" />
+          <span className="absolute left-[10%] top-[22%] border border-ink/30 bg-surface/85 px-2.5 py-1.5 font-mono text-[0.625rem] uppercase tracking-[0.09em] text-ink opacity-90 blur-[1.3px]">
+            <span className="mr-1.5 inline-block h-[5px] w-[5px] bg-accent align-middle" />
             Ligne humaine · FR
           </span>
-          <span className="absolute right-[9%] top-[30%] border border-ink/30 bg-surface/85 px-4 py-2.5 font-mono text-xs uppercase tracking-[0.09em] text-ink">
+          <span className="absolute right-[9%] top-[30%] border border-ink/30 bg-surface/85 px-2.5 py-1.5 font-mono text-[0.625rem] uppercase tracking-[0.09em] text-ink opacity-90 blur-[1.3px]">
             Échange à venir <span aria-hidden="true">→</span>
           </span>
         </div>
@@ -81,11 +81,12 @@ export default function ContactPage() {
             </p>
           </div>
           <Image
-            src="/images/drawing-onde-contact.jpg"
+            src="/images/onde.svg"
             alt=""
-            width={300}
-            height={300}
-            className="mx-auto w-full max-w-[150px]"
+            width={400}
+            height={200}
+            unoptimized
+            className="mx-auto w-[clamp(120px,14vw,180px)]"
           />
         </div>
       </section>

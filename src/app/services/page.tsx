@@ -172,10 +172,11 @@ export default function ServicesPage() {
       <section aria-labelledby="titre-cadre" className="border-b border-hairline bg-shade">
         <div className="mx-auto grid max-w-[1440px] items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:px-12 lg:py-28">
           <Image
-            src="/images/drawing-constellation.jpg"
+            src="/images/equalizer.svg"
             alt=""
-            width={620}
-            height={620}
+            width={480}
+            height={240}
+            unoptimized
             className="mx-auto w-full max-w-[420px]"
           />
           <div>
@@ -282,11 +283,12 @@ export default function ServicesPage() {
           <div>
             <Chip>La prochaine conversation commence ici</Chip>
             <Image
-              src="/images/drawing-emblem.jpg"
+              src="/images/phone.svg"
               alt=""
-              width={210}
-              height={210}
-              className="mt-6 max-w-[105px]"
+              width={260}
+              height={260}
+              unoptimized
+              className="mt-6 w-[clamp(90px,10vw,130px)]"
             />
             <h2
               id="titre-suite"

@@ -15,7 +15,7 @@ export default function ArrowLink({
   return (
     <Link
       href={href}
-      className={`group inline-flex items-center gap-2 font-medium text-ink underline-offset-4 hover:text-accent hover:underline focus-visible:underline ${className ?? ""}`}
+      className={`group inline-flex items-center gap-2 font-medium text-ink underline decoration-dotted decoration-1 underline-offset-8 hover:text-accent hover:decoration-solid focus-visible:decoration-solid ${className ?? ""}`}
     >
       {children}
       <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">

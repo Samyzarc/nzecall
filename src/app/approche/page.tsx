@@ -59,27 +59,31 @@ export default function ApprochePage() {
       {/* ------------------------------------------------ Écouter avant de répondre */}
       <section aria-labelledby="titre-ecouter" className="border-b border-hairline bg-shade">
         <div className="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
-          <div className="mx-auto mb-12 grid max-w-4xl grid-cols-1 items-center gap-6 text-center sm:grid-cols-[130px_1fr_130px]">
-            <Image
-              src="/images/drawing-onde-approche.jpg"
-              alt=""
-              width={260}
-              height={260}
-              className="hidden justify-self-center sm:block"
-            />
-            <h2
-              id="titre-ecouter"
-              className="font-heading text-[clamp(2.5rem,5.5vw,5rem)] font-medium leading-[1.04] tracking-[-0.045em] text-ink"
-            >
-              Écouter avant de répondre.
-            </h2>
-            <Image
-              src="/images/drawing-onde-approche.jpg"
-              alt=""
-              width={260}
-              height={260}
-              className="hidden justify-self-center sm:block -scale-x-100"
-            />
+          <div className="mx-auto mb-12 max-w-6xl text-center">
+            <div className="flex items-center justify-center gap-8 lg:gap-10">
+              <Image
+                src="/images/onde.svg"
+                alt=""
+                width={400}
+                height={200}
+                unoptimized
+                className="hidden w-[clamp(120px,13vw,190px)] lg:block"
+              />
+              <h2
+                id="titre-ecouter"
+                className="font-heading text-[clamp(2.3rem,5vw,4.5rem)] font-medium leading-[1.04] tracking-[-0.045em] text-ink lg:whitespace-nowrap lg:text-[clamp(2.75rem,4.8vw,4.5rem)]"
+              >
+                Écouter avant de répondre.
+              </h2>
+              <Image
+                src="/images/onde.svg"
+                alt=""
+                width={400}
+                height={200}
+                unoptimized
+                className="hidden w-[clamp(120px,13vw,190px)] -scale-x-100 lg:block"
+              />
+            </div>
           </div>
           <div className="mx-auto max-w-3xl space-y-5 text-center">
             <p className="text-[1.0625rem] leading-[1.75] text-silver">
@@ -215,11 +219,12 @@ export default function ApprochePage() {
       <section className="border-b border-hairline bg-shade">
         <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-6 px-5 py-20 text-center sm:px-8 lg:px-12">
           <Image
-            src="/images/drawing-gouache.jpg"
+            src="/images/phone.svg"
             alt=""
-            width={300}
-            height={300}
-            className="max-w-[150px]"
+            width={260}
+            height={260}
+            unoptimized
+            className="w-[clamp(90px,10vw,130px)]"
           />
           <Chip tone="ink" mark="✳">
             Nzé Call · {site.location}

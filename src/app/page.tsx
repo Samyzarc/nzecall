@@ -3,6 +3,7 @@ import Link from "next/link";
 import ArrowLink from "@/components/ArrowLink";
 import { ButtonLink } from "@/components/Button";
 import Chip from "@/components/Chip";
+import Reveal from "@/components/Reveal";
 import { site } from "@/config/site";
 import {
   heroPills,
@@ -72,16 +73,16 @@ export default function HomePage() {
 
       {/* ------------------------------------------------ Hero */}
       <section className="relative flex min-h-[calc(100dvh-4rem)] items-center overflow-hidden border-b border-hairline bg-[radial-gradient(ellipse_at_50%_60%,#10243b_0%,#010b1b_66%)]">
-        {/* Pastilles flottantes — décoratives, masquées sur petit écran */}
+        {/* Pastilles flottantes — décoratives, floues et discrètes, masquées sur petit écran */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden lg:block">
           {heroPills.map((label, i) => (
             <span
               key={label}
-              className={`absolute border border-ink/30 bg-surface/85 px-4 py-2.5 font-mono text-xs uppercase tracking-[0.09em] text-ink ${
+              className={`absolute border border-ink/30 bg-surface/85 px-2.5 py-1.5 font-mono text-[0.625rem] uppercase tracking-[0.09em] text-ink opacity-90 blur-[1.3px] ${
                 pillPositions[i % pillPositions.length]
               }`}
             >
-              <span className="mr-2 inline-block h-[7px] w-[7px] bg-accent align-middle" />
+              <span className="mr-1.5 inline-block h-[5px] w-[5px] bg-accent align-middle" />
               {label}
             </span>
           ))}
@@ -121,33 +122,35 @@ export default function HomePage() {
       {/* ------------------------------------------------ Chaque appel compte */}
       <section aria-labelledby="titre-appel" className="bg-shade">
         <div className="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:pb-28 lg:pt-24">
-          <div className="mx-auto mb-14 grid max-w-4xl grid-cols-1 items-center gap-6 text-center sm:grid-cols-[130px_1fr_130px]">
-            <Image
-              src="/images/drawing-ondes.jpg"
-              alt=""
-              width={260}
-              height={260}
-              className="hidden justify-self-center sm:block"
-            />
-            <div>
+          <div className="mx-auto mb-14 max-w-6xl text-center">
+            <div className="flex items-center justify-center gap-8 lg:gap-10">
+              <Image
+                src="/images/onde.svg"
+                alt=""
+                width={400}
+                height={200}
+                unoptimized
+                className="hidden w-[clamp(120px,13vw,190px)] lg:block"
+              />
               <h2
                 id="titre-appel"
-                className="font-heading text-[clamp(2.5rem,5.5vw,5rem)] font-medium leading-[1.04] tracking-[-0.045em] text-ink"
+                className="font-heading text-[clamp(2.5rem,5.5vw,5rem)] font-medium leading-[1.04] tracking-[-0.045em] text-ink lg:whitespace-nowrap lg:text-[clamp(3rem,5.2vw,5rem)]"
               >
                 Chaque appel compte.
               </h2>
-              <p className="mx-auto mt-5 max-w-xl text-[1.0625rem] leading-[1.7] text-muted">
-                À l&rsquo;autre bout du fil, une personne qui comprend la
-                demande et sait quoi en faire.
-              </p>
+              <Image
+                src="/images/onde.svg"
+                alt=""
+                width={400}
+                height={200}
+                unoptimized
+                className="hidden w-[clamp(120px,13vw,190px)] -scale-x-100 lg:block"
+              />
             </div>
-            <Image
-              src="/images/drawing-ondes.jpg"
-              alt=""
-              width={260}
-              height={260}
-              className="hidden justify-self-center sm:block -scale-x-100"
-            />
+            <p className="mx-auto mt-5 max-w-xl text-[1.0625rem] leading-[1.7] text-muted">
+              À l&rsquo;autre bout du fil, une personne qui comprend la
+              demande et sait quoi en faire.
+            </p>
           </div>
 
           <ul className="grid list-none gap-4 md:grid-cols-3" role="list">
@@ -203,12 +206,15 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid gap-3 md:grid-cols-[1.12fr_1fr_1fr]">
+          {/* Révélation « accordéon » : les cartons s'ouvrent l'un après
+              l'autre au défilement (décalage --d, voir Reveal.tsx). */}
+          <Reveal className="grid gap-3 md:grid-cols-[1.12fr_1fr_1fr]">
             {homeServices.map((s, i) => (
               <article
                 key={s.number}
+                style={{ "--d": `${i * 300}ms` } as React.CSSProperties}
                 className={`flex min-h-[320px] min-w-0 flex-col border border-hairline p-[30px] ${
-                  i === 0 ? "bg-surface" : i === 3 ? "md:col-span-3" : "bg-bg"
+                  i === 0 ? "border-transparent bg-story" : i === 3 ? "md:col-span-3" : "bg-bg"
                 }`}
               >
                 <p className="font-mono text-xs font-bold uppercase tracking-[0.15em] text-muted">
@@ -229,60 +235,69 @@ export default function HomePage() {
                       alt={s.alt ?? ""}
                       fill
                       sizes="(max-width: 768px) 100vw, 40vw"
-                      className="object-cover"
+                      className="object-cover grayscale"
                     />
                   </div>
                 ) : null}
                 <p className="text-[0.9375rem] leading-[1.7] text-muted">{s.text}</p>
               </article>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* ------------------------------------------------ Le sérieux d'un cadre */}
       <section aria-labelledby="titre-cadre" className="bg-story">
-        <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1fr_1.25fr] lg:items-start lg:gap-16 lg:px-12 lg:py-28">
-          <div>
-            <h2
-              id="titre-cadre"
-              className="font-heading text-[clamp(2.3rem,5vw,4.5rem)] font-medium leading-[1.04] tracking-[-0.045em] text-white"
-            >
-              Le sérieux d&rsquo;un cadre.
-              <br />
-              La chaleur d&rsquo;une voix.
-            </h2>
-            <p className="mt-7 text-[1.0625rem] leading-[1.7] text-white/85">
-              Nous sommes basés à Libreville, au Gabon. Nous avons choisi de
-              faire de l&rsquo;échange humain le cœur du service.
-            </p>
-            <p className="mt-4 text-[0.9375rem] leading-[1.7] text-white/70">
-              Comprendre une nuance, reformuler une demande, savoir quand
-              transmettre plutôt que promettre&nbsp;: ces gestes simples
-              protègent la confiance que vos clients placent en vous. Nos
-              interlocuteurs francophones travaillent dans le cadre
-              opérationnel et légal défini pour chaque mission.
-            </p>
-          </div>
-          <div>
-            {storySteps.map((step) => (
-              <div
-                key={step.number}
-                className="flex items-start gap-6 border-t border-white/25 py-8 last:border-b"
+        <div className="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.3fr] lg:items-start lg:gap-16">
+            <div>
+              <Image
+                src="/images/asterisk-badge.svg"
+                alt=""
+                width={140}
+                height={140}
+                unoptimized
+                className="mb-8 w-[clamp(84px,9vw,118px)]"
+              />
+              <h2
+                id="titre-cadre"
+                className="font-heading text-[clamp(2.3rem,5vw,4.5rem)] font-medium leading-[1.04] tracking-[-0.045em] text-white"
               >
-                <p className="shrink-0 font-mono text-xs font-bold tracking-[0.15em] text-white/60">
-                  {step.number} →
-                </p>
-                <div>
-                  <h3 className="font-heading text-[clamp(1.5rem,2.4vw,2.125rem)] font-medium leading-[1.1] tracking-[-0.02em] text-white">
-                    {step.name}
-                  </h3>
-                  <p className="mt-2 text-[0.9375rem] leading-[1.7] text-white/70">
-                    {step.text}
-                  </p>
-                </div>
+                Le sérieux d&rsquo;un cadre.
+                <br />
+                La chaleur d&rsquo;une voix.
+              </h2>
+            </div>
+            <div>
+              <p className="font-heading text-[clamp(1.5rem,2.6vw,2.125rem)] font-medium leading-[1.25] tracking-[-0.015em] text-white">
+                Nous sommes basés à Libreville, au Gabon. Nous avons choisi de
+                faire de l&rsquo;échange humain le cœur du service.
+              </p>
+              <p className="mt-5 text-[0.9375rem] leading-[1.7] text-white/70">
+                Comprendre une nuance, reformuler une demande, savoir quand
+                transmettre plutôt que promettre&nbsp;: ces gestes simples
+                protègent la confiance que vos clients placent en vous. Nos
+                interlocuteurs francophones travaillent dans le cadre
+                opérationnel et légal défini pour chaque mission.
+              </p>
+              <div className="mt-14 border-t border-white/25 pt-8">
+                <ol className="grid list-none gap-8 sm:grid-cols-3 sm:gap-6" role="list">
+                  {storySteps.map((step) => (
+                    <li key={step.number}>
+                      <p className="font-mono text-xs font-bold tracking-[0.15em] text-white/60">
+                        {step.number} <span aria-hidden="true">→</span>
+                      </p>
+                      <h3 className="mt-3 font-heading text-[1.25rem] font-medium leading-[1.15] tracking-[-0.01em] text-white">
+                        {step.name}
+                      </h3>
+                      <p className="mt-2 text-[0.875rem] leading-[1.7] text-white/70">
+                        {step.text}
+                      </p>
+                    </li>
+                  ))}
+                </ol>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -333,17 +348,18 @@ export default function HomePage() {
       <section aria-labelledby="titre-ouverture" className="bg-surface">
         <div className="mx-auto grid max-w-[1440px] items-end gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.3fr_0.7fr] lg:px-12 lg:py-28">
           <div>
-            <Chip>Parlons de votre accueil</Chip>
             <Image
-              src="/images/drawing-combine.jpg"
+              src="/images/phone.svg"
               alt=""
-              width={210}
-              height={210}
-              className="mt-6 max-w-[105px]"
+              width={260}
+              height={260}
+              unoptimized
+              className="mx-auto mb-9 w-[clamp(90px,10vw,130px)]"
             />
+            <Chip>Parlons de votre accueil</Chip>
             <h2
               id="titre-ouverture"
-              className="mb-8 mt-6 max-w-[900px] font-heading text-[clamp(2.4rem,6vw,5.25rem)] font-medium leading-[1.02] tracking-[-0.045em] text-ink"
+              className="mb-8 mt-6 max-w-[620px] font-heading text-[clamp(2.4rem,6vw,5.25rem)] font-medium leading-[1.02] tracking-[-0.045em] text-ink"
             >
               Et si votre prochain appel était entre de bonnes mains&nbsp;?
             </h2>
@@ -354,8 +370,16 @@ export default function HomePage() {
               <ArrowLink href="/contact">Nous écrire</ArrowLink>
             </div>
           </div>
-          <aside className="border-t border-ink/40 pt-6">
-            <p className="text-[0.9375rem] leading-[1.7] text-ink/80">
+          <aside className="border-t border-ink/40 pt-7">
+            <Image
+              src="/images/asterisk-badge.svg"
+              alt=""
+              width={140}
+              height={140}
+              unoptimized
+              className="w-[clamp(80px,8vw,106px)]"
+            />
+            <p className="mt-6 text-[0.9375rem] leading-[1.7] text-ink/80">
               Expliquez-nous les appels que vous souhaitez confier à Nzé Call.
               Nous définirons ensemble le périmètre, les consignes et la façon
               de travailler.

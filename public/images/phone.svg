@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" fill="none" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="ph" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4a97dd"/>
+      <stop offset="1" stop-color="#2b6fb3"/>
+    </linearGradient>
+    <filter id="phglow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+  <!-- halo doux derrière le combiné -->
+  <ellipse cx="112" cy="86" rx="86" ry="52" fill="#3182ce" opacity="0.22" filter="url(#phglow)"/>
+  <!-- cordon en spirale (sous l'écouteur, dessiné d'abord) -->
+  <path d="M 67.0 148.0 L 67.7 150.7 L 67.7 153.4 L 67.1 155.9 L 66.0 158.2 L 64.4 160.1 L 62.7 161.6 L 60.9 162.8 L 59.3 163.5 L 58.1 163.9 L 57.4 163.9 L 57.5 163.8 L 58.3 163.6 L 59.9 163.4 L 62.3 163.3 L 65.4 163.5 L 69.0 164.1 L 73.0 165.1 L 77.0 166.6 L 80.9 168.5 L 84.5 170.9 L 87.5 173.7 L 89.7 176.7 L 91.1 179.9 L 91.5 183.1 L 91.1 186.2 L 89.8 189.0 L 87.8 191.5 L 85.4 193.5 L 82.7 195.0 L 80.1 196.0 L 77.8 196.4 L 76.1 196.4 L 75.1 196.0 L 75.1 195.3 L 76.1 194.6 L 78.1 194.0 L 81.1 193.6 L 84.9 193.5 L 89.4 194.0 L 94.2 195.0 L 99.2 196.6 L 103.9 198.8 L 108.0 201.5 L 111.4 204.7 L 113.8 208.2 L 115.1 211.9 L 115.2 215.6 L 114.2 219.1 L 112.2 222.2 L 109.4 224.9 L 106.1 227.0 L 102.6 228.4 L 99.1 229.1 L 96.2 229.2 L 93.9 228.7 L 92.7 227.9 L 92.7 226.7 L 93.9 225.5 L 96.4 224.5 L 100.0 223.7 L 104.7 223.4 L 110.1 223.8 L 115.8 224.8 L 121.6 226.6" stroke="#7db3e8" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- combiné : deux capsules + bande de liaison, incliné -->
+  <g transform="rotate(-35 120 100)">
+    <rect x="88" y="63" width="64" height="34" rx="9" fill="url(#ph)"/>
+    <rect x="26" y="54" width="68" height="52" rx="26" fill="url(#ph)"/>
+    <rect x="146" y="54" width="68" height="52" rx="26" fill="url(#ph)"/>
+    <path d="M40 66 q 12 -8 26 -4" stroke="#cdd8e6" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+    <path d="M160 66 q 12 -8 26 -4" stroke="#cdd8e6" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+    <path d="M92 68 Q 120 58 148 68" stroke="#cdd8e6" stroke-width="1.6" stroke-linecap="round" opacity="0.6"/>
+  </g>
+  <!-- arcs de signal depuis le micro -->
+  <path d="M196 44 q 14 -12 12 -30" stroke="#a9cdec" stroke-width="2.6" stroke-linecap="round" opacity="0.85"/>
+  <path d="M212 60 q 26 -18 22 -48" stroke="#a9cdec" stroke-width="2.2" stroke-linecap="round" opacity="0.55"/>
+  <!-- scintillements -->
+  <circle cx="238" cy="96" r="2.6" fill="#cdd8e6"/>
+  <circle cx="30" cy="60" r="2.2" fill="#a9cdec" opacity="0.8"/>
+  <circle cx="222" cy="186" r="2.4" fill="#cdd8e6" opacity="0.75"/>
+  <circle cx="96" cy="24" r="1.8" fill="#cdd8e6" opacity="0.7"/>
+</svg>
