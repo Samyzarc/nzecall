@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Nzé Call">
+  <!-- Nzé Call — marque seule, monochrome -->
+  <path d="M3 3h26v22H14.5L8 31v-6H3V3z" fill="#E6E8EB"/>
+  <rect x="11.2" y="11" width="2.6" height="6" fill="#010B1B"/>
+  <rect x="14.7" y="8" width="2.6" height="12" fill="#010B1B"/>
+  <rect x="18.2" y="11" width="2.6" height="6" fill="#010B1B"/>
+</svg>

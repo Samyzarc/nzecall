@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Nzé Call">
+  <!-- Nzé Call — icône Apple Touch -->
+  <rect width="180" height="180" fill="#010B1B"/>
+  <g transform="translate(53 32) scale(2.3)">
+    <path d="M3 3h26v22H14.5L8 31v-6H3V3z" fill="#3182CE"/>
+    <rect x="11.2" y="11" width="2.6" height="6" fill="#010B1B"/>
+    <rect x="14.7" y="8" width="2.6" height="12" fill="#010B1B"/>
+    <rect x="18.2" y="11" width="2.6" height="6" fill="#010B1B"/>
+  </g>
+  <text x="90" y="152" text-anchor="middle" font-family="'Fredoka','Fredoka Fallback',ui-sans-serif,system-ui,sans-serif" font-size="22" font-weight="600" letter-spacing="-0.5" fill="#E6E8EB">Nzé Call <tspan fill="#3182CE">✳</tspan></text>
+</svg>
