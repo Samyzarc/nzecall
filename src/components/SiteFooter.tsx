@@ -32,7 +32,7 @@ export default function SiteFooter() {
                   <li key={l.href}>
                     <Link
                       href={l.href}
-                      className="font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-muted underline-offset-4 transition-colors hover:text-accent hover:underline"
+                      className="font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-muted underline-offset-4 transition-colors hover:text-accent hover:underline"
                     >
                       {l.label}
                     </Link>

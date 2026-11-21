@@ -1,7 +1,8 @@
 import Link from "next/link";
 
 /**
- * Lien interne avec flèche — motif signature du design.
+ * Lien interne souligné — style d'origine : texte souligné plein,
+ * sans flèche.
  */
 export default function ArrowLink({
   href,
@@ -15,12 +16,9 @@ export default function ArrowLink({
   return (
     <Link
       href={href}
-      className={`group inline-flex items-center gap-2 font-medium text-ink underline decoration-dotted decoration-1 underline-offset-8 hover:text-accent hover:decoration-solid focus-visible:decoration-solid ${className ?? ""}`}
+      className={`group inline-flex items-center gap-2 font-medium text-silver underline decoration-1 underline-offset-4 hover:text-accent ${className ?? ""}`}
     >
       {children}
-      <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">
-        →
-      </span>
     </Link>
   );
 }

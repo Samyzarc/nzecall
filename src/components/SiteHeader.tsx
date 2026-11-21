@@ -49,7 +49,7 @@ export default function SiteHeader() {
               key={l.href}
               href={l.href}
               aria-current={pathname === l.href ? "page" : undefined}
-              className={`font-mono text-[0.6875rem] font-medium uppercase tracking-[0.16em] transition-colors hover:text-accent ${
+              className={`font-body text-[0.6875rem] font-medium uppercase tracking-[0.16em] transition-colors hover:text-accent ${
                 pathname === l.href ? "text-ink" : "text-muted"
               }`}
             >
@@ -61,9 +61,9 @@ export default function SiteHeader() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className="hidden border border-accent bg-accent px-5 py-3 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-on-accent outline outline-1 outline-offset-4 outline-accent transition-colors hover:bg-ink hover:text-bg hover:outline-ink sm:inline-block"
+            className="hidden border border-[#1a63a8] bg-[#1a63a8] px-4 py-2.5 font-heading text-[15px] font-medium leading-none text-on-accent outline outline-1 outline-offset-[3px] outline-accent transition-[background-color,color] duration-300 hover:bg-ink hover:text-bg hover:outline-ink sm:inline-block"
           >
-            Demander un devis <span aria-hidden="true">→</span>
+            Demander un devis
           </Link>
 
           <button
@@ -99,7 +99,7 @@ export default function SiteHeader() {
                 <Link
                   href={l.href}
                   aria-current={pathname === l.href ? "page" : undefined}
-                  className="block py-3.5 font-mono text-xs font-medium uppercase tracking-[0.16em] text-ink"
+                  className="block py-3.5 font-body text-xs font-medium uppercase tracking-[0.16em] text-ink"
                 >
                   {l.label}
                 </Link>
@@ -108,7 +108,7 @@ export default function SiteHeader() {
             <li className="pt-4">
               <Link
                 href="/contact"
-                className="block bg-accent px-5 py-3.5 text-center font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-on-accent"
+                className="block border border-[#1a63a8] bg-[#1a63a8] px-5 py-3 text-center font-heading text-[15px] font-medium text-on-accent outline outline-1 outline-offset-[3px] outline-accent"
               >
                 Demander un devis
               </Link>

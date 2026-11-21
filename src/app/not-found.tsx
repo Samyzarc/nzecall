@@ -17,13 +17,13 @@ export default function NotFound() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-7">
           <Link
             href="/"
-            className="inline-flex min-h-[52px] items-center justify-center gap-2 border border-accent bg-accent px-6 py-4 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-on-accent outline outline-1 outline-offset-4 outline-accent transition-colors hover:bg-ink hover:text-bg hover:outline-ink"
+            className="inline-flex min-h-[52px] items-center justify-center gap-2 border border-accent bg-accent px-6 py-4 font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-on-accent outline outline-1 outline-offset-4 outline-accent transition-colors hover:bg-ink hover:text-bg hover:outline-ink"
           >
-            Retour à l&rsquo;accueil <span aria-hidden="true">→</span>
+            Retour à l&rsquo;accueil
           </Link>
           <Link
             href="/contact"
-            className="font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-ink underline-offset-4 transition-colors hover:text-accent hover:underline"
+            className="font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-ink underline-offset-4 transition-colors hover:text-accent hover:underline"
           >
             Demander un devis
           </Link>

@@ -1,16 +1,14 @@
 /**
- * Étiquette monospace — petit libellé majuscule du design (eyebrow, index),
- * avec marque décorative facultative (✳, ●, →) devant le texte.
+ * Étiquette eyebrow — petit libellé majuscule du design (Nunito gras,
+ * letter-spacing large), comme sur le site d'origine.
  */
 export default function Chip({
   children,
   tone = "muted",
-  mark,
   className,
 }: {
   children: React.ReactNode;
   tone?: "muted" | "ink" | "accent" | "light";
-  mark?: string;
   className?: string;
 }) {
   const toneClass =
@@ -23,13 +21,8 @@ export default function Chip({
           : "text-muted";
   return (
     <span
-      className={`inline-block font-mono text-[0.6875rem] font-bold uppercase leading-[1.6] tracking-[0.15em] ${toneClass} ${className ?? ""}`}
+      className={`inline-block font-body text-xs font-bold uppercase leading-[1.6] tracking-[0.15em] ${toneClass} ${className ?? ""}`}
     >
-      {mark ? (
-        <span aria-hidden="true" className="mr-2 text-accent">
-          {mark}
-        </span>
-      ) : null}
       {children}
     </span>
   );

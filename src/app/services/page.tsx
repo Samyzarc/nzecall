@@ -34,7 +34,7 @@ function TickerHalf() {
         tickerItems.map((item) => (
           <span
             key={`${i}-${item}`}
-            className="flex items-center whitespace-nowrap font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-on-accent"
+            className="flex items-center whitespace-nowrap font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-on-accent"
           >
             <span aria-hidden="true" className="mx-6 text-on-accent/70">✳</span>
             {item}
@@ -52,7 +52,7 @@ export default function ServicesPage() {
       <section className="border-b border-hairline">
         <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:items-center lg:px-12 lg:py-24">
           <div className="lg:col-span-6">
-            <Chip tone="ink" mark="✳">
+            <Chip tone="ink">
               Nzé Call · {site.location}
             </Chip>
             <h1 className="mt-6 font-heading text-[clamp(3rem,8vw,7rem)] font-medium leading-[0.95] tracking-[-0.05em] text-ink">
@@ -60,14 +60,14 @@ export default function ServicesPage() {
             </h1>
             <div className="mt-9">
               <ButtonLink href="/contact">
-                Demander un devis <span aria-hidden="true">→</span>
+                Demander un devis
               </ButtonLink>
             </div>
             <p className="mt-9 max-w-xl text-[1.0625rem] leading-[1.7] text-muted">
               Confiez-nous les conversations qui font vivre votre relation
               client, sans perdre la maîtrise de ce qui se dit.
             </p>
-            <p className="mt-8 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-muted">
+            <p className="mt-8 font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-muted">
               Une voix humaine à chaque étape <span aria-hidden="true">→</span>
             </p>
           </div>
@@ -82,7 +82,7 @@ export default function ServicesPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
-              <p className="absolute left-4 top-4 bg-bg/85 px-3.5 py-2.5 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-ink">
+              <p className="absolute left-4 top-4 bg-bg/85 px-3.5 py-2.5 font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-ink">
                 <span aria-hidden="true" className="mr-2 inline-block h-[7px] w-[7px] bg-accent align-middle" />
                 Ligne humaine · FR
               </p>
@@ -96,7 +96,7 @@ export default function ServicesPage() {
                       href={`#${s.anchor}`}
                       className="group flex items-baseline gap-5 py-4"
                     >
-                      <span className="font-mono text-xs font-bold tracking-[0.15em] text-muted">
+                      <span className="font-body text-xs font-bold tracking-[0.15em] text-muted">
                         {s.number}
                       </span>
                       <span className="flex-1 font-heading text-[1.125rem] font-medium text-ink underline-offset-4 transition-colors group-hover:text-accent group-hover:underline">
@@ -149,7 +149,7 @@ export default function ServicesPage() {
                 className="grid scroll-mt-24 gap-8 border-t border-hairline py-12 last:border-b lg:grid-cols-[2fr_3fr] lg:gap-16"
               >
                 <div>
-                  <p className="font-mono text-xs font-bold uppercase tracking-[0.15em] text-muted">
+                  <p className="font-body text-xs font-bold uppercase tracking-[0.15em] text-muted">
                     {s.number} / {s.label}
                   </p>
                   <h3 className="mt-4 font-heading text-[clamp(1.65rem,2.6vw,2.6rem)] font-medium leading-[1.08] tracking-[-0.02em] text-ink">
@@ -193,7 +193,7 @@ export default function ServicesPage() {
             <ul className="mt-10 list-none" role="list">
               {constellationItems.map((item) => (
                 <li key={item.title} className="border-t border-hairline py-7 last:border-b">
-                  <p className="font-mono text-xs font-bold uppercase tracking-[0.15em] text-muted">
+                  <p className="font-body text-xs font-bold uppercase tracking-[0.15em] text-muted">
                     <span aria-hidden="true" className="mr-2 text-accent">{item.mark}</span>
                     {item.chip}
                   </p>
@@ -221,7 +221,7 @@ export default function ServicesPage() {
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
-            <p className="absolute bottom-5 right-5 bg-bg/85 px-3.5 py-2.5 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-ink">
+            <p className="absolute bottom-5 right-5 bg-bg/85 px-3.5 py-2.5 font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-ink">
               Échange en cours <span aria-hidden="true">→</span>
             </p>
           </div>
@@ -242,7 +242,7 @@ export default function ServicesPage() {
             <ul className="mt-8 list-none space-y-4" role="list">
               {afterHelloSteps.map((step) => (
                 <li key={step} className="flex items-start gap-4">
-                  <span aria-hidden="true" className="mt-1 shrink-0 font-mono text-accent">✳</span>
+                  <span aria-hidden="true" className="mt-1 shrink-0 font-body text-accent">✳</span>
                   <p className="text-[0.9375rem] leading-[1.7] text-silver">{step}</p>
                 </li>
               ))}
@@ -283,10 +283,10 @@ export default function ServicesPage() {
           <div>
             <Chip>La prochaine conversation commence ici</Chip>
             <Image
-              src="/images/phone.svg"
+              src="/images/original/emblem.webp"
               alt=""
-              width={260}
-              height={260}
+              width={1024}
+              height={1024}
               unoptimized
               className="mt-6 w-[clamp(100px,11vw,145px)]"
             />
@@ -297,7 +297,7 @@ export default function ServicesPage() {
               Parlons des appels que vous souhaitez nous confier.
             </h2>
             <ButtonLink href="/contact">
-              Demander un devis <span aria-hidden="true">→</span>
+              Demander un devis
             </ButtonLink>
           </div>
           <aside className="border-t border-ink/40 pt-6">
@@ -308,9 +308,9 @@ export default function ServicesPage() {
             <p className="mt-5">
               <Link
                 href="/contact"
-                className="font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-ink/70 underline-offset-4 hover:text-accent hover:underline"
+                className="text-[1rem] font-medium text-silver underline decoration-1 underline-offset-4 hover:text-accent"
               >
-                Nous écrire <span aria-hidden="true">→</span>
+                Nous écrire
               </Link>
             </p>
           </aside>

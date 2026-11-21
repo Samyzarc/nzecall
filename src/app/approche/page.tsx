@@ -28,7 +28,7 @@ export default function ApprochePage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
-              <p className="absolute left-4 top-4 bg-bg/85 px-3.5 py-2.5 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-ink">
+              <p className="absolute left-4 top-4 bg-bg/85 px-3.5 py-2.5 font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-ink">
                 <span aria-hidden="true" className="mr-2 inline-block h-[7px] w-[7px] bg-accent align-middle" />
                 Voix humaine · Libreville
               </p>
@@ -36,7 +36,7 @@ export default function ApprochePage() {
           </div>
 
           <div className="lg:col-span-6">
-            <Chip tone="ink" mark="✳">
+            <Chip tone="ink">
               Nzé Call · Notre approche
             </Chip>
             <h1 className="mt-6 font-heading text-[clamp(2.6rem,6.5vw,5.75rem)] font-medium leading-[0.98] tracking-[-0.05em] text-ink">
@@ -49,7 +49,7 @@ export default function ApprochePage() {
             </p>
             <div className="mt-9">
               <ButtonLink href="/contact">
-                Demander un devis <span aria-hidden="true">→</span>
+                Demander un devis
               </ButtonLink>
             </div>
           </div>
@@ -62,10 +62,10 @@ export default function ApprochePage() {
           <div className="mx-auto mb-12 max-w-6xl text-center">
             <div className="flex items-center justify-center gap-8 lg:gap-10">
               <Image
-                src="/images/onde.svg"
+                src="/images/original/onde-single.webp"
                 alt=""
-                width={400}
-                height={200}
+                width={1024}
+                height={1024}
                 unoptimized
                 className="hidden w-[clamp(120px,13vw,190px)] lg:block"
               />
@@ -76,10 +76,10 @@ export default function ApprochePage() {
                 Écouter avant de répondre.
               </h2>
               <Image
-                src="/images/onde.svg"
+                src="/images/original/onde-single.webp"
                 alt=""
-                width={400}
-                height={200}
+                width={1024}
+                height={1024}
                 unoptimized
                 className="hidden w-[clamp(120px,13vw,190px)] -scale-x-100 lg:block"
               />
@@ -115,7 +115,7 @@ export default function ApprochePage() {
             {approachBadges.map((badge, i) => (
               <li
                 key={badge}
-                className="border border-ink/30 bg-surface/85 px-4 py-2.5 font-mono text-xs uppercase tracking-[0.09em] text-ink"
+                className="border border-ink/30 bg-surface/85 px-4 py-2.5 font-body text-xs uppercase tracking-[0.09em] text-ink"
               >
                 {i > 0 ? (
                   <span aria-hidden="true" className="mr-2 text-accent">✳</span>
@@ -153,7 +153,7 @@ export default function ApprochePage() {
                 className="grid gap-10 border-t border-hairline py-12 last:border-b lg:grid-cols-[1.2fr_1fr] lg:gap-16"
               >
                 <div>
-                  <p className="font-mono text-xs font-bold uppercase tracking-[0.15em] text-muted">
+                  <p className="font-body text-xs font-bold uppercase tracking-[0.15em] text-muted">
                     {block.number} / {block.label}
                   </p>
                   <p className="mt-5">
@@ -167,7 +167,7 @@ export default function ApprochePage() {
                           className="flex items-baseline justify-between gap-6 border-b border-hairline py-3"
                         >
                           <dt className="text-[0.9375rem] text-silver">{row.key}</dt>
-                          <dd className="flex items-center gap-3 font-mono text-xs font-bold uppercase tracking-[0.12em] text-muted">
+                          <dd className="flex items-center gap-3 font-body text-xs font-bold uppercase tracking-[0.12em] text-muted">
                             {row.value}
                             <span aria-hidden="true" className="text-accent">→</span>
                           </dd>
@@ -202,7 +202,7 @@ export default function ApprochePage() {
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             {mindsetCards.map((card) => (
               <article key={card.title} className="border border-hairline p-[26px]">
-                <p className="font-mono text-xs font-bold uppercase tracking-[0.15em] text-accent">
+                <p className="font-body text-xs font-bold uppercase tracking-[0.15em] text-accent">
                   <span aria-hidden="true" className="mr-2">✳</span>
                   {card.title}
                 </p>
@@ -219,14 +219,14 @@ export default function ApprochePage() {
       <section className="border-b border-hairline bg-shade">
         <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-6 px-5 py-20 text-center sm:px-8 lg:px-12">
           <Image
-            src="/images/phone.svg"
+            src="/images/original/gouache.webp"
             alt=""
-            width={260}
-            height={260}
+            width={1024}
+            height={1024}
             unoptimized
             className="w-[clamp(100px,11vw,145px)]"
           />
-          <Chip tone="ink" mark="✳">
+          <Chip tone="ink">
             Nzé Call · {site.location}
           </Chip>
           <p className="max-w-2xl text-[1.0625rem] leading-[1.7] text-muted">
@@ -248,7 +248,7 @@ export default function ApprochePage() {
               Parlons de la façon dont vous souhaitez répondre.
             </h2>
             <ButtonLink href="/contact">
-              Demander un devis <span aria-hidden="true">→</span>
+              Demander un devis
             </ButtonLink>
           </div>
           <aside className="border-t border-ink/40 pt-6">

@@ -35,7 +35,7 @@ export const homeScenes: Scene[] = [
     chip: "Appel pris en charge",
     heading: "Une première impression qui tient parole.",
     text: "Répondre au nom de votre entreprise, transmettre le bon message, passer le relais au bon interlocuteur.",
-    image: "/images/scene-accueil.jpg",
+    image: "/images/original/scene-accueil.webp",
     alt: "Une professionnelle répond à un appel dans un bureau calme",
   },
   {
@@ -44,7 +44,7 @@ export const homeScenes: Scene[] = [
     chip: "Demande suivie",
     heading: "Une réponse claire, même quand c'est compliqué.",
     text: "Demandes, commandes et réclamations suivent les procédures que nous avons définies ensemble.",
-    image: "/images/scene-suivi.jpg",
+    image: "/images/original/scene-suivi.webp",
     alt: "Une agente écoute attentivement un client au téléphone",
   },
   {
@@ -53,7 +53,7 @@ export const homeScenes: Scene[] = [
     chip: "Rendez-vous qualifié",
     heading: "La suite de la conversation commence ici.",
     text: "Nous rappelons les personnes intéressées dans le cadre précis de leur demande.",
-    image: "/images/scene-relation.jpg",
+    image: "/images/original/scene-relation.webp",
     alt: "Deux professionnels préparent un rendez-vous dans un bureau",
   },
 ];
@@ -76,7 +76,7 @@ export const homeServices: ServiceTile[] = [
     name: "Accueil téléphonique",
     text: "Nous répondons au nom de votre entreprise, prenons les messages et transférons les communications. Avant le démarrage, nous fixons ensemble les plages de disponibilité, les actions autorisées ou interdites, la durée de la mission et la mobilisation des agents.",
     anchor: "accueil",
-    image: "/images/offer-accueil.jpg",
+    image: "/images/original/offer-accueil.webp",
     alt: "Une professionnelle prend un message téléphonique",
   },
   {

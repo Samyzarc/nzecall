@@ -51,7 +51,7 @@ export default function Accordion({
                 className="flex w-full items-center gap-4 py-5 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 {item.number ? (
-                  <span className="font-mono text-xs font-medium tracking-[0.14em] text-accent">
+                  <span className="font-body text-xs font-medium tracking-[0.14em] text-accent">
                     {item.number}
                   </span>
                 ) : null}
@@ -60,7 +60,7 @@ export default function Accordion({
                 </span>
                 <span
                   aria-hidden="true"
-                  className={`font-mono text-lg leading-none text-muted transition-transform ${open ? "rotate-45" : ""}`}
+                  className={`font-body text-lg leading-none text-muted transition-transform ${open ? "rotate-45" : ""}`}
                 >
                   +
                 </span>

@@ -21,17 +21,17 @@ export default function ContactPage() {
       <section className="relative overflow-hidden border-b border-hairline bg-[radial-gradient(ellipse_at_50%_60%,#10243b_0%,#010b1b_66%)]">
         {/* Pastilles flottantes — décoratives, floues et discrètes, masquées sur petit écran */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden lg:block">
-          <span className="absolute left-[10%] top-[22%] border border-ink/30 bg-surface/85 px-2.5 py-1.5 font-mono text-[0.625rem] uppercase tracking-[0.09em] text-ink opacity-90 blur-[1.3px]">
+          <span className="absolute left-[10%] top-[22%] border border-ink/30 bg-surface/85 px-2.5 py-1.5 font-body text-[0.625rem] uppercase tracking-[0.09em] text-ink opacity-90 blur-[1.3px]">
             <span className="mr-1.5 inline-block h-[5px] w-[5px] bg-accent align-middle" />
             Ligne humaine · FR
           </span>
-          <span className="absolute right-[9%] top-[30%] border border-ink/30 bg-surface/85 px-2.5 py-1.5 font-mono text-[0.625rem] uppercase tracking-[0.09em] text-ink opacity-90 blur-[1.3px]">
+          <span className="absolute right-[9%] top-[30%] border border-ink/30 bg-surface/85 px-2.5 py-1.5 font-body text-[0.625rem] uppercase tracking-[0.09em] text-ink opacity-90 blur-[1.3px]">
             Échange à venir <span aria-hidden="true">→</span>
           </span>
         </div>
 
         <div className="relative z-[1] mx-auto max-w-[1440px] px-5 py-24 text-center sm:px-8 lg:px-12 lg:py-32">
-          <p className="font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-muted">
+          <p className="font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-muted">
             Nzé Call / Contact / Libreville
           </p>
           <h1 className="mx-auto mb-7 mt-6 max-w-[900px] font-heading text-[clamp(2.8rem,8vw,7rem)] font-medium leading-[0.95] tracking-[-0.05em] text-ink">
@@ -43,7 +43,7 @@ export default function ContactPage() {
             interlocuteurs attendent de vous.
           </p>
           <ButtonLink href="#formulaire">
-            Demander un devis <span aria-hidden="true">→</span>
+            Demander un devis
           </ButtonLink>
         </div>
       </section>
@@ -57,7 +57,7 @@ export default function ContactPage() {
           >
             0
           </p>
-          <p className="mb-4 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-muted">
+          <p className="mb-4 font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-muted">
             L&rsquo;humain dans la conversation
           </p>
         </div>
@@ -81,10 +81,10 @@ export default function ContactPage() {
             </p>
           </div>
           <Image
-            src="/images/onde.svg"
+            src="/images/original/onde-single.webp"
             alt=""
-            width={400}
-            height={200}
+            width={1024}
+            height={1024}
             unoptimized
             className="mx-auto w-[clamp(120px,14vw,180px)]"
           />
@@ -118,7 +118,7 @@ export default function ContactPage() {
                     key={fact.key}
                     className="flex flex-col gap-1 border-b border-hairline py-5 first:border-t sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
                   >
-                    <dt className="font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-muted">
+                    <dt className="font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-muted">
                       {fact.key}
                     </dt>
                     <dd className="text-[0.9375rem] text-silver">{fact.value}</dd>
@@ -153,7 +153,7 @@ export default function ContactPage() {
                 href="/approche"
                 className="group border border-hairline p-6 transition-colors hover:border-accent"
               >
-                <p className="font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-muted">
+                <p className="font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-muted">
                   Notre approche
                 </p>
                 <p className="mt-3 text-[0.9375rem] leading-[1.6] text-ink">
@@ -165,7 +165,7 @@ export default function ContactPage() {
                 href="#formulaire"
                 className="group border border-hairline p-6 transition-colors hover:border-accent"
               >
-                <p className="font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-muted">
+                <p className="font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-muted">
                   Échange dédié
                 </p>
                 <p className="mt-3 text-[0.9375rem] leading-[1.6] text-ink">
@@ -199,9 +199,9 @@ export default function ContactPage() {
             Faisons une place à la bonne voix dans votre entreprise.
           </h2>
           <ButtonLink href="#formulaire">
-            Demander un devis <span aria-hidden="true">→</span>
+            Demander un devis
           </ButtonLink>
-          <p className="mt-10 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-muted">
+          <p className="mt-10 font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-muted">
             {site.location} · {site.footerDescription}
           </p>
         </div>

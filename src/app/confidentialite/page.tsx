@@ -112,7 +112,7 @@ export default function ConfidentialitePage() {
           </p>
           <ul className="space-y-3">
             <li className="flex gap-3">
-              <span aria-hidden="true" className="mt-1 font-mono text-xs text-accent">→</span>
+              <span aria-hidden="true" className="mt-1 font-body text-xs text-accent">→</span>
               <span>
                 <strong className="text-ink">Vercel Inc.</strong> (États-Unis) :
                 hébergement du site. Vercel agit en qualité de sous-traitant au
@@ -123,7 +123,7 @@ export default function ConfidentialitePage() {
               </span>
             </li>
             <li className="flex gap-3">
-              <span aria-hidden="true" className="mt-1 font-mono text-xs text-accent">→</span>
+              <span aria-hidden="true" className="mt-1 font-body text-xs text-accent">→</span>
               <span>
                 <strong className="text-ink">Resend</strong> (Plus Five Five,
                 Inc., États-Unis) : acheminement des e-mails. Resend agit en

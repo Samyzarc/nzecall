@@ -13,7 +13,7 @@ const fieldBase =
   "w-full border border-white/45 bg-white/5 px-4 py-3 text-[0.9375rem] text-white placeholder:text-white/50 focus:border-white focus:outline-none";
 
 const labelBase =
-  "mb-2 block font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-white/85";
+  "mb-2 block font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-white/85";
 
 /** Marques décoratives « $ /$ » posées aux coins des champs (motif de l'original). */
 function CornerMarks() {
@@ -21,13 +21,13 @@ function CornerMarks() {
     <>
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -left-2.5 -top-2 select-none font-mono text-xs text-white/60"
+        className="pointer-events-none absolute -left-2.5 -top-2 select-none font-body text-xs text-white/60"
       >
         $
       </span>
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-2 -right-3 select-none font-mono text-xs text-white/60"
+        className="pointer-events-none absolute -bottom-2 -right-3 select-none font-body text-xs text-white/60"
       >
         /$
       </span>
@@ -41,7 +41,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="inline-flex min-h-[52px] items-center justify-center gap-2 border border-accent bg-accent px-6 py-4 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-on-accent outline outline-1 outline-offset-4 outline-accent transition-colors hover:bg-white hover:text-panel hover:outline-white disabled:cursor-not-allowed disabled:opacity-60"
+      className="inline-flex min-h-[52px] items-center justify-center gap-2 border border-[#1a63a8] bg-[#1a63a8] px-[22px] py-4 font-heading text-[17px] font-medium leading-[1.2] text-on-accent outline outline-1 outline-offset-4 outline-accent transition-[background-color,color,outline-offset] duration-300 hover:bg-ink hover:text-bg hover:outline-ink hover:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
     >
       {pending ? "Envoi en cours…" : "Envoyer ma demande"}
     </button>
@@ -74,20 +74,20 @@ export default function ContactForm() {
     <div className="relative border border-white/30 bg-panel p-7 sm:p-10">
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -left-3 -top-3 select-none font-mono text-base text-white/60"
+        className="pointer-events-none absolute -left-3 -top-3 select-none font-body text-base text-white/60"
       >
         $
       </span>
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-3 -right-3 select-none font-mono text-base text-white/60"
+        className="pointer-events-none absolute -bottom-3 -right-3 select-none font-body text-base text-white/60"
       >
         /$
       </span>
 
       {state.status === "success" ? (
         <div role="status" aria-live="polite" className="py-6">
-          <p className="font-mono text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-white">
+          <p className="font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-white">
             [ Message envoyé ]
           </p>
           <p className="mt-4 font-heading text-2xl font-medium leading-snug text-white">

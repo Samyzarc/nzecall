@@ -1,11 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" fill="none" role="img" aria-hidden="true">
-  <!-- Badge astérisque : double anneau concentrique + astérisque six branches,
-       trait fin clair sur fond transparent (motif de l'original). -->
-  <circle cx="70" cy="70" r="66" stroke="#e6e8eb" stroke-width="1.6" opacity="0.85"/>
-  <circle cx="70" cy="70" r="54" stroke="#e6e8eb" stroke-width="1.1" opacity="0.55"/>
-  <g stroke="#e6e8eb" stroke-width="2.6" stroke-linecap="round">
-    <path d="M70 48 v44"/>
-    <path d="M51 59 l38 22"/>
-    <path d="M89 59 l-38 22"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none" role="img" aria-hidden="true">
+  <!-- Badge astérisque — repris à l'identique du site d'origine
+       (double anneau concentrique + astérisque six branches). -->
+  <circle fill="none" stroke="currentColor" stroke-width="1" cx="80" cy="80" r="78"></circle>
+  <circle fill="none" stroke="currentColor" stroke-width="1" cx="80" cy="80" r="54"></circle>
+  <path fill="none" stroke="currentColor" stroke-width="3" d="M80 66v28M68 73l24 14M92 73l-24 14"></path>
 </svg>
