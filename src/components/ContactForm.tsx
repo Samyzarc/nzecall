@@ -8,6 +8,7 @@ import {
   type ContactFieldKey,
 } from "@/actions/contact-state";
 import { submitContact } from "@/actions/contact";
+import { homeServices } from "@/content/site-content";
 
 const fieldBase =
   "w-full border border-white/45 bg-white/5 px-4 py-3 text-[0.9375rem] text-white placeholder:text-white/50 focus:border-white focus:outline-none";
@@ -164,6 +165,41 @@ export default function ContactForm() {
             />
             <FieldError id="erreur-company" message={fe.company} />
           </div>
+
+          {/* Services envisagés — sélection libre, un ou plusieurs */ }
+          <fieldset className="relative">
+            <CornerMarks />
+            <legend className={labelBase}>
+              Les services qui vous intéressent
+              <span className="ml-2 font-body font-normal normal-case tracking-normal text-white/60">
+                (facultatif, un ou plusieurs)
+              </span>
+            </legend>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {homeServices.map((s) => (
+                <label
+                  key={s.anchor}
+                  className="flex cursor-pointer items-center gap-3 border border-white/45 bg-white/5 px-4 py-3 text-[0.9375rem] text-white transition-colors hover:border-white/70 has-[:checked]:border-white has-[:checked]:bg-white/10"
+                >
+                  <span className="relative flex h-4 w-4 shrink-0 items-center justify-center">
+                    <input
+                      type="checkbox"
+                      name="services"
+                      value={s.name}
+                      className="peer h-4 w-4 cursor-pointer appearance-none border border-white/60 bg-transparent transition-colors checked:border-white checked:bg-white"
+                    />
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-0 flex items-center justify-center text-[11px] font-bold leading-none text-panel opacity-0 peer-checked:opacity-100"
+                    >
+                      ✓
+                    </span>
+                  </span>
+                  {s.name}
+                </label>
+              ))}
+            </div>
+          </fieldset>
 
           <div className="relative">
             <CornerMarks />

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import ArrowLink from "@/components/ArrowLink";
 import { ButtonLink } from "@/components/Button";
+import ContactForm from "@/components/ContactForm";
 import Chip from "@/components/Chip";
 import Reveal from "@/components/Reveal";
 import { site } from "@/config/site";
@@ -103,7 +103,7 @@ export default function HomePage() {
             attentif à vos consignes comme à vos clients.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-7">
-            <ButtonLink href="/contact">Demander un devis</ButtonLink>
+            <ButtonLink href="#formulaire">Demander un devis</ButtonLink>
           </div>
         </div>
 
@@ -389,8 +389,12 @@ export default function HomePage() {
       </section>
 
       {/* ------------------------------------------------ Ouvrir la discussion */}
-      <section aria-labelledby="titre-ouverture" className="bg-surface">
-        <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.85fr_1fr] lg:gap-[140px] lg:px-12 lg:py-[105px]">
+      <section
+        id="formulaire"
+        aria-labelledby="titre-ouverture"
+        className="scroll-mt-24 bg-surface"
+      >
+        <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.1fr_1fr] lg:gap-16 lg:px-12 lg:py-[105px]">
           <div>
             <Image
               src="/images/original/combine.webp"
@@ -403,30 +407,19 @@ export default function HomePage() {
             <Chip className="text-[1.1875rem] tracking-[0.15em]">Parlons de votre accueil</Chip>
             <h2
               id="titre-ouverture"
-              className="mb-8 mt-5 max-w-[650px] font-heading text-[clamp(2.8rem,6.9vw,6.25rem)] font-medium leading-[1.04] tracking-[-0.045em] text-ink"
+              className="mt-5 max-w-[650px] font-heading text-[clamp(2.8rem,6.9vw,6.25rem)] font-medium leading-[1.04] tracking-[-0.045em] text-ink"
             >
               Et si votre prochain appel était entre de bonnes mains&nbsp;?
             </h2>
-            <div className="flex flex-wrap items-center gap-7">
-              <ButtonLink href="/contact">Demander un devis</ButtonLink>
-              <ArrowLink href="/contact">Nous écrire</ArrowLink>
-            </div>
-          </div>
-          <aside className="border-t border-ink/40 pt-6 lg:mt-[190px]">
-            <Image
-              src="/images/asterisk-badge.svg"
-              alt=""
-              width={160}
-              height={160}
-              unoptimized
-              className="w-[100px] text-ink"
-            />
-            <p className="mt-6 text-[1rem] leading-[1.6] text-ink/80">
+            <p className="mt-8 max-w-[520px] text-[1rem] leading-[1.7] text-ink/80">
               Expliquez-nous les appels que vous souhaitez confier à Nzé Call.
               Nous définirons ensemble le périmètre, les consignes et la façon
               de travailler.
             </p>
-          </aside>
+          </div>
+          <div className="lg:pt-6">
+            <ContactForm />
+          </div>
         </div>
       </section>
     </>

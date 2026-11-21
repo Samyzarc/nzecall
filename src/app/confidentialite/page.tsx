@@ -184,7 +184,7 @@ export default function ConfidentialitePage() {
             ajouté au site. Toute modification substantielle sera signalée sur
             cette page. Pour toute question, la{" "}
             <Link
-              href="/contact"
+              href="/#formulaire"
               className="text-ink underline underline-offset-4 hover:text-accent"
             >
               page de contact

@@ -41,7 +41,7 @@ export default function SiteFooter() {
               </ul>
             </nav>
             <Link
-              href="/contact"
+              href="/#formulaire"
               className={`${buttonClass} !min-h-[44px] !px-5 !py-3`}
             >
               Demander un devis

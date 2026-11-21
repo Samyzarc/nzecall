@@ -48,7 +48,7 @@ export default function ApprochePage() {
               ressemble à votre entreprise.
             </p>
             <div className="mt-9">
-              <ButtonLink href="/contact">
+              <ButtonLink href="/#formulaire">
                 Demander un devis
               </ButtonLink>
             </div>
@@ -247,7 +247,7 @@ export default function ApprochePage() {
             >
               Parlons de la façon dont vous souhaitez répondre.
             </h2>
-            <ButtonLink href="/contact">
+            <ButtonLink href="/#formulaire">
               Demander un devis
             </ButtonLink>
           </div>

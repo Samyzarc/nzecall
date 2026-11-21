@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { z } from "zod";
 import { Resend } from "resend";
 import { site } from "@/config/site";
+import { homeServices } from "@/content/site-content";
 import type { ContactFormState, ContactFieldKey } from "./contact-state";
 
 const contactSchema = z.object({
@@ -25,6 +26,8 @@ const contactSchema = z.object({
     .trim()
     .min(20, "Décrivez brièvement les appels à confier (au moins 20 caractères).")
     .max(4000, "Le message est trop long (4000 caractères maximum)."),
+  /** Services cochés dans le formulaire (facultatifs, filtrés sur la liste offerte) */
+  services: z.array(z.string().max(80)).max(4).optional(),
   /** Champ pot de miel : doit rester vide */
   website: z.string().max(0).optional(),
 });
@@ -75,6 +78,7 @@ export async function submitContact(
     email: formData.get("email"),
     company: formData.get("company"),
     message: formData.get("message"),
+    services: formData.getAll("services"),
     website: formData.get("website"),
   });
 
@@ -92,6 +96,9 @@ export async function submitContact(
   }
 
   const data = parsed.data;
+  // Seuls les noms de services réellement offerts sont conservés.
+  const offered = homeServices.map((s) => s.name);
+  const services = (data.services ?? []).filter((v) => offered.includes(v));
 
   // 3. Limitation de débit : seules les soumissions valides (qui déclenchent
   //    un envoi) consomment le quota, pour ne pas pénaliser les erreurs de saisie.
@@ -141,6 +148,9 @@ export async function submitContact(
         `Nom : ${data.name}`,
         `E-mail professionnel : ${data.email}`,
         `Entreprise : ${data.company}`,
+        ...(services.length
+          ? [`Services envisagés : ${services.join(", ")}`]
+          : []),
         "",
         "Appels à confier, décrits par le demandeur :",
         data.message,

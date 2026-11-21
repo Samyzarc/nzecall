@@ -60,7 +60,7 @@ export default function SiteHeader() {
 
         <div className="flex items-center gap-3">
           <Link
-            href="/contact"
+            href="/#formulaire"
             className="hidden border border-[#1a63a8] bg-[#1a63a8] px-4 py-2.5 font-heading text-[15px] font-medium leading-none text-on-accent outline outline-1 outline-offset-[3px] outline-accent transition-[background-color,color] duration-300 hover:bg-ink hover:text-bg hover:outline-ink sm:inline-block"
           >
             Demander un devis
@@ -107,7 +107,7 @@ export default function SiteHeader() {
             ))}
             <li className="pt-4">
               <Link
-                href="/contact"
+                href="/#formulaire"
                 className="block border border-[#1a63a8] bg-[#1a63a8] px-5 py-3 text-center font-heading text-[15px] font-medium text-on-accent outline outline-1 outline-offset-[3px] outline-accent"
               >
                 Demander un devis

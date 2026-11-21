@@ -22,7 +22,7 @@ export default function NotFound() {
             Retour à l&rsquo;accueil
           </Link>
           <Link
-            href="/contact"
+            href="/#formulaire"
             className="font-body text-[0.6875rem] font-bold uppercase tracking-[0.15em] text-ink underline-offset-4 transition-colors hover:text-accent hover:underline"
           >
             Demander un devis

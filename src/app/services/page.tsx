@@ -59,7 +59,7 @@ export default function ServicesPage() {
               Nos services
             </h1>
             <div className="mt-9">
-              <ButtonLink href="/contact">
+              <ButtonLink href="/#formulaire">
                 Demander un devis
               </ButtonLink>
             </div>
@@ -155,7 +155,7 @@ export default function ServicesPage() {
                   <h3 className="mt-4 font-heading text-[clamp(1.65rem,2.6vw,2.6rem)] font-medium leading-[1.08] tracking-[-0.02em] text-ink">
                     {s.name}
                   </h3>
-                  <ArrowLink href="/contact" className="mt-6">
+                  <ArrowLink href="/#formulaire" className="mt-6">
                     {s.cta}
                   </ArrowLink>
                 </div>
@@ -296,7 +296,7 @@ export default function ServicesPage() {
             >
               Parlons des appels que vous souhaitez nous confier.
             </h2>
-            <ButtonLink href="/contact">
+            <ButtonLink href="/#formulaire">
               Demander un devis
             </ButtonLink>
           </div>
@@ -307,7 +307,7 @@ export default function ServicesPage() {
             </p>
             <p className="mt-5">
               <Link
-                href="/contact"
+                href="/#formulaire"
                 className="text-[1rem] font-medium text-silver underline decoration-1 underline-offset-4 hover:text-accent"
               >
                 Nous écrire
