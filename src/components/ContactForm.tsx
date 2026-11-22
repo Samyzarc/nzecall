@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState } from "react";
+import { useActionState, useEffect, useRef } from "react";
 import { useFormStatus } from "react-dom";
 import {
   emptyContactState,
   type ContactFieldKey,
+  type ContactFormState,
 } from "@/actions/contact-state";
 import { submitContact } from "@/actions/contact";
 import { homeServices } from "@/content/site-content";
@@ -65,14 +66,59 @@ function FieldError({ id, message }: { id: string; message?: string }) {
  * Panneau bleu du design, marques « $ /$ » décoratives.
  */
 export default function ContactForm() {
-  const [state, formAction] = useActionState(submitContact, emptyContactState);
+  const lastFormData = useRef<FormData | null>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  const [state, formAction] = useActionState(
+    async (prev: ContactFormState, formData: FormData) => {
+      lastFormData.current = formData;
+      return submitContact(prev, formData);
+    },
+    emptyContactState,
+  );
   const fe = state.fieldErrors ?? {};
+
+  // Après une soumission, React réinitialise les champs du formulaire.
+  // Si l'envoi a échoué, on restaure ce qui avait été saisi, puis on
+  // amène le message de résultat à l'écran — sinon il reste hors champ,
+  // au-dessus du bouton d'envoi, et la soumission paraît sans effet.
+  useEffect(() => {
+    if (state.status === "idle") return;
+
+    if (state.status === "error" && lastFormData.current) {
+      const fd = lastFormData.current;
+      const form = panelRef.current?.querySelector("form");
+      if (form) {
+        for (const name of ["name", "email", "company", "message"]) {
+          const el =
+            form.querySelector<HTMLInputElement>(`input[name="${name}"]`) ??
+            form.querySelector<HTMLTextAreaElement>(`textarea[name="${name}"]`);
+          if (el) el.value = (fd.get(name) as string) ?? "";
+        }
+        const chosen = new Set(fd.getAll("services").map(String));
+        form
+          .querySelectorAll<HTMLInputElement>('input[name="services"]')
+          .forEach((box) => {
+            box.checked = chosen.has(box.value);
+          });
+      }
+    }
+
+    const msg = panelRef.current?.querySelector<HTMLElement>(
+      "[role='alert'], [role='status']",
+    );
+    if (msg) {
+      msg.setAttribute("tabindex", "-1");
+      msg.focus({ preventScroll: true });
+      msg.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [state]);
 
   const aria = (key: ContactFieldKey): string | undefined =>
     fe[key] ? `erreur-${key}` : undefined;
 
   return (
-    <div className="relative border border-white/30 bg-panel p-7 sm:p-10">
+    <div ref={panelRef} className="relative border border-white/30 bg-panel p-7 sm:p-10">
       <span
         aria-hidden="true"
         className="pointer-events-none absolute -left-3 -top-3 select-none font-body text-base text-white/60"

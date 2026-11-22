@@ -118,7 +118,7 @@ export async function submitContact(
     if (process.env.NODE_ENV === "development") {
       console.info(
         "[contact] RESEND_API_KEY absente (développement) — message non envoyé :",
-        { name: data.name, email: data.email, company: data.company },
+        { name: data.name, email: data.email, company: data.company, services },
       );
       return {
         status: "success",
@@ -130,7 +130,7 @@ export async function submitContact(
     return {
       status: "error",
       message:
-        "L'envoi est momentanément indisponible. Merci de réessayer dans quelques instants.",
+        `L'envoi est momentanément indisponible. En attendant, écrivez-nous directement à ${site.contactEmail}.`,
     };
   }
 
@@ -163,7 +163,7 @@ export async function submitContact(
       return {
         status: "error",
         message:
-          "L'envoi est momentanément indisponible. Merci de réessayer dans quelques instants.",
+          `L'envoi est momentanément indisponible. En attendant, écrivez-nous directement à ${site.contactEmail}.`,
       };
     }
   } catch {
@@ -171,7 +171,7 @@ export async function submitContact(
     return {
       status: "error",
       message:
-        "L'envoi est momentanément indisponible. Merci de réessayer dans quelques instants.",
+        `L'envoi est momentanément indisponible. En attendant, écrivez-nous directement à ${site.contactEmail}.`,
     };
   }
 
